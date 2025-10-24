@@ -1,7 +1,7 @@
 # BlogIt - AI-Powered Blogging Platform 
 
 > A modern, full-stack blogging platform that combines elegant design with powerful AI capabilities to revolutionize content creation and management.
-
+Live Link: https://blog-it-ai-powered-blogging-platfor.vercel.app
 ---
 
 ## ✨ Key Features
