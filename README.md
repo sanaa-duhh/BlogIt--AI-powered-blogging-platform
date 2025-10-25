@@ -1,13 +1,17 @@
 # BlogIt - AI-Powered Blogging Platform 
 
+Live Link: https://blog-it-ai-powered-blogging-platfor.vercel.app
+
 > A modern, full-stack blogging platform that combines elegant design with powerful AI capabilities to revolutionize content creation and management.
 
-Live Link: https://blog-it-ai-powered-blogging-platfor.vercel.app
 ---
 
-<img width="1915" height="874" alt="Screenshot 2025-10-24 234731" src="https://github.com/user-attachments/assets/bb0a10c3-ebed-4cdc-9122-3b34088e4780" />
 
-<img width="1916" height="879" alt="Screenshot 2025-10-24 235710" src="https://github.com/user-attachments/assets/ea0b9b0d-49ff-451c-b9d0-157eb56eaf99" />
+<img width="1919" height="875" alt="Screenshot 2025-10-25 192911" src="https://github.com/user-attachments/assets/6d5f4525-680f-4db3-b2e7-b38398c373e7" />
+
+<img width="1918" height="882" alt="Screenshot 2025-10-25 193130" src="https://github.com/user-attachments/assets/893388e9-82d9-41fc-8ddf-225558ca45c0" />
+
+<img width="1915" height="879" alt="Screenshot 2025-10-25 193708" src="https://github.com/user-attachments/assets/4b39e77e-670e-458a-8bbf-44fa27f7d659" />
 
 
 
@@ -34,6 +38,9 @@ Live Link: https://blog-it-ai-powered-blogging-platfor.vercel.app
 - **Comment Moderation**: Approve or reject reader comments
 - **Recent Activity**: Monitor latest blogs and engagement metrics
 - **Secure Authentication**: JWT-based admin authentication
+
+<img width="1919" height="874" alt="Screenshot 2025-10-25 193314" src="https://github.com/user-attachments/assets/25a75e7a-c9cf-429b-9c43-4a155899535e" />
+
 
 ### Technical Highlights
 - **Optimized Performance**: Image optimization with WebP conversion and auto-compression
@@ -147,7 +154,8 @@ Frontend runs on `http://localhost:5173`
 
 - **Public Site**: `https://blog-it-ai-powered-blogging-platform-3p3d7ljob.vercel.app`
 - **Admin Login**: `https://blog-it-ai-powered-blogging-platform-3p3d7ljob.vercel.app/admin`
-  - Use the email and password you set in server `.env`
+  - Use the email : admin@example.com
+  - use the password : heeehahahaha
 
 ---
 
@@ -220,8 +228,7 @@ Every uploaded image is automatically:
 
 This ensures lightning-fast page loads even with image-heavy blogs.
 
-<img width="1919" height="875" alt="Screenshot 2025-10-24 235142" src="https://github.com/user-attachments/assets/1147d27b-3814-4d93-922e-8872163d48a6" />
-
+<img width="1915" height="880" alt="Screenshot 2025-10-25 193533" src="https://github.com/user-attachments/assets/51a5aa33-e0d9-4aaf-94d5-c0b591c0454a" />
 
 ### Comment Moderation System
 BlogIt includes a sophisticated comment system where:
@@ -233,7 +240,7 @@ BlogIt includes a sophisticated comment system where:
 
 ---
 
-<img width="1912" height="891" alt="Screenshot 2025-10-24 235323" src="https://github.com/user-attachments/assets/41ec6008-badf-44fc-ab0b-72e622662c0f" />
+<img width="1915" height="875" alt="Screenshot 2025-10-25 193609" src="https://github.com/user-attachments/assets/1d582f3a-16bd-4b67-bcb6-7a1771ebc358" />
 
 
 ## 🎨 Design Philosophy
