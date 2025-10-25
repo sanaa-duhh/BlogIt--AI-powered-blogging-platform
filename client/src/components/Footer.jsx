@@ -11,6 +11,7 @@ const Footer = () => {
             <p className='max-w-[410px] mt-6'>From spark to story, BlogIt’s AI helps you write, refine, and share your ideas with the world.</p>
         </div>
 
+        {/* fake footer section */}
         <div className='flex flex-wrap justify-between w-full md:w-[45%] gap-5'>
             {footer_data.map((section, index)=> (
                 <div key={index}>
