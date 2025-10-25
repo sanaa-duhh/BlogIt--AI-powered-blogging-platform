@@ -10,6 +10,7 @@ const AddBlog = () => {
     const {axios} = useAppContext()
     const [isAdding, setIsAdding] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [isDragging, setIsDragging] = useState(false)
 
     const editorRef = useRef(null)
     const quillRef = useRef(null)
@@ -19,6 +20,70 @@ const AddBlog = () => {
     const [subTitle, setSubTitle] = useState('');
     const [category, setCategory] = useState('Startup');
     const [isPublished, setIsPublished] = useState(false);
+
+    // Drag and Drop Handlers
+    const handleDragEnter = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(true);
+    };
+
+    const handleDragLeave = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
+    const handleDrop = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+
+        const files = e.dataTransfer.files;
+        if (files && files[0]) {
+            const file = files[0];
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                toast.error('Please upload an image file');
+                return;
+            }
+            
+            // Validate file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                toast.error('Image size should be less than 5MB');
+                return;
+            }
+            
+            setImage(file);
+            toast.success('Image uploaded successfully!');
+        }
+    };
+
+    const handleFileSelect = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                toast.error('Please upload an image file');
+                return;
+            }
+            
+            // Validate file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                toast.error('Image size should be less than 5MB');
+                return;
+            }
+            
+            setImage(file);
+            toast.success('Image uploaded successfully!');
+        }
+    };
 
     const generateContent = async ()=>{
         if(!title) return toast.error('Please enter a title')
@@ -85,10 +150,60 @@ const AddBlog = () => {
       <div className='bg-white w-full max-w-3xl p-4 md:p-10 sm:m-10 shadow rounded'>
 
         <p>Upload thumbnail</p>
-        <label htmlFor="image">
-            <img src={!image ? assets.upload_area : URL.createObjectURL(image)} alt="" className='mt-2 h-16 rounded cursor-pointer'/>
-            <input onChange={(e)=> setImage(e.target.files[0])} type="file" id='image' hidden required/>
-        </label>
+        <div
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            className={`border-2 border-dashed rounded-lg p-6 text-center transition-all mt-2 ${
+                isDragging 
+                    ? 'border-primary bg-primary/5 scale-102' 
+                    : 'border-gray-300 hover:border-gray-400'
+            }`}
+        >
+            {!image ? (
+                <label htmlFor="image" className="cursor-pointer block">
+                    <div className="flex flex-col items-center gap-3">
+                        <img src={assets.upload_area} alt="" className="h-16 opacity-60" />
+                        <div>
+                            <p className="text-sm font-medium text-gray-700">
+                                {isDragging ? '📥 Drop image here' : 'Drag & drop your image here'}
+                            </p>
+                            <p className="text-xs text-gray-500 mt-1">or click to browse</p>
+                        </div>
+                        <p className="text-xs text-gray-400">PNG, JPG, GIF up to 5MB</p>
+                    </div>
+                    <input
+                        onChange={handleFileSelect}
+                        type="file"
+                        id="image"
+                        accept="image/*"
+                        hidden
+                        required
+                    />
+                </label>
+            ) : (
+                <div className="relative">
+                    <img
+                        src={URL.createObjectURL(image)}
+                        alt="Preview"
+                        className="max-h-48 mx-auto rounded shadow-md"
+                    />
+                    <div className="mt-3 flex flex-col items-center gap-2">
+                        <p className="text-xs text-gray-600">
+                            {image.name} ({(image.size / 1024).toFixed(2)} KB)
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => setImage(false)}
+                            className="text-xs text-red-600 hover:text-red-800 hover:underline"
+                        >
+                            ✕ Remove image
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
 
         <p className='mt-4'>Blog title</p>
         <input type="text" placeholder='Type here' required className='w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded' onChange={e => setTitle(e.target.value)} value={title}/>
@@ -119,7 +234,7 @@ const AddBlog = () => {
             <input type="checkbox" checked={isPublished} className='scale-125 cursor-pointer' onChange={e => setIsPublished(e.target.checked)}/>
         </div>
 
-        <button disabled={isAdding} type="submit" className='mt-8 w-40 h-10 bg-primary text-white rounded cursor-pointer text-sm'>
+        <button disabled={isAdding} type="submit" className='mt-8 w-40 h-10 bg-primary text-white rounded cursor-pointer text-sm hover:bg-primary/90 transition-all'>
             {isAdding ? 'Adding...' : 'Add Blog'}
         </button>
 
