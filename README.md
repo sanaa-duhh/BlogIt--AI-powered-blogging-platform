@@ -2,7 +2,14 @@
 
 > A modern, full-stack blogging platform that combines elegant design with powerful AI capabilities to revolutionize content creation and management.
 
+Live Link: https://blog-it-ai-powered-blogging-platfor.vercel.app
 ---
+
+<img width="1915" height="874" alt="Screenshot 2025-10-24 234731" src="https://github.com/user-attachments/assets/bb0a10c3-ebed-4cdc-9122-3b34088e4780" />
+
+<img width="1916" height="879" alt="Screenshot 2025-10-24 235710" src="https://github.com/user-attachments/assets/ea0b9b0d-49ff-451c-b9d0-157eb56eaf99" />
+
+
 
 ## ✨ Key Features
 
@@ -213,6 +220,9 @@ Every uploaded image is automatically:
 
 This ensures lightning-fast page loads even with image-heavy blogs.
 
+<img width="1919" height="875" alt="Screenshot 2025-10-24 235142" src="https://github.com/user-attachments/assets/1147d27b-3814-4d93-922e-8872163d48a6" />
+
+
 ### Comment Moderation System
 BlogIt includes a sophisticated comment system where:
 - Users can comment on any published blog
@@ -222,6 +232,9 @@ BlogIt includes a sophisticated comment system where:
 - Comments show relative timestamps ("2 hours ago")
 
 ---
+
+<img width="1912" height="891" alt="Screenshot 2025-10-24 235323" src="https://github.com/user-attachments/assets/41ec6008-badf-44fc-ab0b-72e622662c0f" />
+
 
 ## 🎨 Design Philosophy
 
@@ -373,22 +386,6 @@ Building BlogIt provided hands-on experience with:
 - Minimal bundle size with tree-shaking
 - CDN delivery for static assets
 - React memo for expensive components
-
----
-
-## 📄 License
-
-This project is developed as an academic assignment and is open for educational purposes.
-
----
-
-## 🙏 Acknowledgments
-
-- **Gemini AI** by Google for powerful content generation
-- **ImageKit** for seamless image optimization
-- **MongoDB Atlas** for reliable cloud database
-- **Vite** team for incredible developer experience
-- **React** community for comprehensive documentation
 
 ---
 
